@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 #include "Patient.h"
-Patient::Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep ){
+#include "Procedure.h"
+Patient::Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep, Procedure pr, string n, string date, string x, int y ){
   firstName=f;
   middleName=m;
   lastName=l;
@@ -12,7 +13,26 @@ Patient::Patient(string f,string m,string l, string a,string c, string s,int z, 
   phoneNumber=p;
   emerContactName=en;
   emerContacNumber=ep;
+  aProcedure.setProcedureName(n);
+  aProcedure.setProcedureDate(date);
+  aProcedure.setProcedurePractitioner(x);
+  aProcedure.setProcedureCharge(y);
+  
+      }
+Patient::Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep,Procedure pr ){
+  firstName=f;
+  middleName=m;
+  lastName=l;
+  address=a;
+  city=c;
+  state=s;
+  zipCode=z;
+  phoneNumber=p;
+  emerContactName=en;
+  emerContacNumber=ep;
+  aProcedure=pr;
 }
+
 void Patient:: setFirstName(string f){
   firstName=f;
 };
@@ -35,7 +55,7 @@ void Patient:: setZipCode(int z){
   zipCode=z;
 };
 void Patient:: setPhoneNumber(int n){
-  phoneNumber=p;
+  phoneNumber=n;
 };
 void Patient:: setEmergencyContactName(string en){
   emerContactName=en;
@@ -43,6 +63,15 @@ void Patient:: setEmergencyContactName(string en){
 void Patient:: setEmergencyContactNumber(int ep){
   emerContacNumber=ep;
 };
+void Patient:: setProcedure(Procedure pr){
+  aProcedure=pr;
+}
+// void setProcedure2(string n, string date, string x, int y ){
+//   aProcedure.setProcedureName(n);
+//   aProcedure.setProcedureDate(date);
+//   aProcedure.setProcedurePractitioner(x);
+//   aProcedure.setProcedureCharge(y);
+// }
 string Patient:: getFirstName(){
   return firstName;
 };
