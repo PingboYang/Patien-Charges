@@ -2,7 +2,10 @@
 using namespace std;
 #include "Patient.h"
 #include "Procedure.h"
-Patient::Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep, Procedure pr, string n, string date, string x, int y ){
+Patient::Patient(){
+  
+}
+Patient::Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep,string n, string date, string x, int y ){
   firstName=f;
   middleName=m;
   lastName=l;
@@ -111,5 +114,8 @@ int Patient:: getEmergencyContactNumber(){
   return emerContacNumber;
           
         }
+Procedure Patient::getProcedure(){
+  return aProcedure;
+}
 
 

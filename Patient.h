@@ -4,11 +4,13 @@ using namespace std;
 #define PATIENT_H
 #include "Procedure.h"
 class Patient{
+
 private: string firstName, middleName, lastName, address, city,state, emerContactName;
          int phoneNumber,emerContacNumber,zipCode;
          Procedure aProcedure;
 public: Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep, Procedure pr);
-        Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep, Procedure pr, string n, string date, string x, int y );
+        Patient();
+        Patient(string f,string m,string l, string a,string c, string s,int z, int p, string en, int ep,string n, string date, string x, int y );
         void setFirstName(string f);
         void setMiddleName(string m);
         void setLastName(string l);
